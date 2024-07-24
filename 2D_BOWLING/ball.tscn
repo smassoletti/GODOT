@@ -1,0 +1,79 @@
+[gd_scene load_steps=8 format=3 uid="uid://d4cb7fceodc8v"]
+
+[ext_resource type="Script" path="res://Ball.gd" id="1_xfru5"]
+[ext_resource type="Script" path="res://RightBar.gd" id="2_qwxcj"]
+[ext_resource type="Script" path="res://LeftBar.gd" id="3_l4hst"]
+[ext_resource type="Script" path="res://TopBar.gd" id="4_22tk1"]
+[ext_resource type="Script" path="res://DownBar.gd" id="5_xpoe0"]
+[ext_resource type="Texture2D" uid="uid://cumgt4i5akohq" path="res://ball.png" id="6_j38yc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sos7f"]
+radius = 24.0832
+
+[node name="Ball" type="Node2D"]
+
+[node name="Ball" type="CharacterBody2D" parent="."]
+script = ExtResource("1_xfru5")
+
+[node name="RightBar" type="ProgressBar" parent="Ball"]
+offset_left = 259.0
+offset_top = 608.0
+offset_right = 347.0
+offset_bottom = 632.0
+min_value = 1.0
+max_value = 1000.0
+step = 0.1
+value = 1.0
+allow_greater = true
+show_percentage = false
+script = ExtResource("2_qwxcj")
+
+[node name="LeftBar" type="ProgressBar" parent="Ball"]
+offset_left = 136.0
+offset_top = 608.0
+offset_right = 224.0
+offset_bottom = 632.0
+min_value = 1.0
+max_value = 1000.0
+step = 0.1
+value = 1.0
+allow_greater = true
+fill_mode = 1
+show_percentage = false
+script = ExtResource("3_l4hst")
+
+[node name="TopBar" type="ProgressBar" parent="Ball"]
+offset_left = 228.0
+offset_top = 520.0
+offset_right = 252.0
+offset_bottom = 611.0
+min_value = 1.0
+max_value = 1000.0
+step = 0.1
+value = 1.0
+allow_greater = true
+fill_mode = 3
+show_percentage = false
+script = ExtResource("4_22tk1")
+
+[node name="DownBar" type="ProgressBar" parent="Ball"]
+offset_left = 228.0
+offset_top = 624.0
+offset_right = 252.0
+offset_bottom = 715.0
+min_value = 1.0
+max_value = 1000.0
+step = 0.1
+value = 1.0
+allow_greater = true
+fill_mode = 2
+show_percentage = false
+script = ExtResource("5_xpoe0")
+
+[node name="BallCollision" type="CollisionShape2D" parent="Ball"]
+position = Vector2(240, 619)
+shape = SubResource("CircleShape2D_sos7f")
+one_way_collision_margin = 0.0
+
+[node name="BallSprite" type="Sprite2D" parent="Ball/BallCollision"]
+texture = ExtResource("6_j38yc")

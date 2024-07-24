@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://bg5bn2lyfnn7l"]
+
+[ext_resource type="Texture2D" uid="uid://bms84psjg3ksg" path="res://bkg.png" id="1_dt2wl"]
+[ext_resource type="Texture2D" uid="uid://cumgt4i5akohq" path="res://ball.png" id="2_mlt2c"]
+[ext_resource type="Script" path="res://Ball.gd" id="3_8xfat"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_exoe0"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_7nct3"]
+a = Vector2(240, 20)
+b = Vector2(-240, 20)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_3cgmj"]
+a = Vector2(-240, 20)
+b = Vector2(-240, 820)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_w1osg"]
+a = Vector2(240, 20)
+b = Vector2(240, 820)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_yjv41"]
+a = Vector2(240, 820)
+b = Vector2(-240, 820)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_imx5i"]
+radius = 24.0832
+
+[node name="Node2D" type="Node2D"]
+material = SubResource("ShaderMaterial_exoe0")
+
+[node name="Bkg" type="Sprite2D" parent="."]
+position = Vector2(240, 400)
+texture = ExtResource("1_dt2wl")
+
+[node name="Border" type="StaticBody2D" parent="Bkg"]
+position = Vector2(-240, -400)
+
+[node name="Top" type="CollisionShape2D" parent="Bkg/Border"]
+position = Vector2(240, -20)
+shape = SubResource("SegmentShape2D_7nct3")
+
+[node name="Top2" type="CollisionShape2D" parent="Bkg/Border"]
+position = Vector2(240, -20)
+shape = SubResource("SegmentShape2D_3cgmj")
+
+[node name="Top3" type="CollisionShape2D" parent="Bkg/Border"]
+position = Vector2(240, -20)
+shape = SubResource("SegmentShape2D_w1osg")
+
+[node name="Top4" type="CollisionShape2D" parent="Bkg/Border"]
+position = Vector2(240, -20)
+shape = SubResource("SegmentShape2D_yjv41")
+
+[node name="Ball" type="CharacterBody2D" parent="."]
+script = ExtResource("3_8xfat")
+
+[node name="BallCollision" type="CollisionShape2D" parent="Ball"]
+position = Vector2(240, 619)
+shape = SubResource("CircleShape2D_imx5i")
+one_way_collision_margin = 0.0
+
+[node name="BallSprite" type="Sprite2D" parent="Ball/BallCollision"]
+texture = ExtResource("2_mlt2c")

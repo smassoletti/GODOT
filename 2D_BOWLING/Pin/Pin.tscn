@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://fhu38w7bwr3l"]
+
+[ext_resource type="Texture2D" uid="uid://m1yjrmn6gvtv" path="res://Pin/Pin.png" id="1_gnbpg"]
+[ext_resource type="Script" path="res://Pin/Pin.gd" id="1_kr86b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s4x5y"]
+radius = 19.0
+
+[node name="Pin" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+gravity_scale = 0.0
+script = ExtResource("1_kr86b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("CircleShape2D_s4x5y")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+scale = Vector2(0.755, 0.755)
+texture = ExtResource("1_gnbpg")

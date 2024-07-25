@@ -1,0 +1,89 @@
+[gd_scene load_steps=9 format=3 uid="uid://bg5bn2lyfnn7l"]
+
+[ext_resource type="Texture2D" uid="uid://bms84psjg3ksg" path="res://Ball/Bkg.png" id="1_q2nbr"]
+[ext_resource type="PackedScene" uid="uid://d4cb7fceodc8v" path="res://Ball/Ball.tscn" id="2_hducy"]
+[ext_resource type="PackedScene" uid="uid://fhu38w7bwr3l" path="res://Pin/Pin.tscn" id="3_kewaa"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_exoe0"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_7nct3"]
+a = Vector2(240, 20)
+b = Vector2(-240, 20)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_3cgmj"]
+a = Vector2(-240, 20)
+b = Vector2(-240, 820)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_w1osg"]
+a = Vector2(240, 20)
+b = Vector2(240, 820)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_yjv41"]
+a = Vector2(240, 820)
+b = Vector2(-240, 820)
+
+[node name="Main" type="Node2D"]
+material = SubResource("ShaderMaterial_exoe0")
+
+[node name="Bkg" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_q2nbr")
+
+[node name="Border" type="StaticBody2D" parent="Bkg"]
+position = Vector2(-240, -400)
+
+[node name="Top" type="CollisionShape2D" parent="Bkg/Border"]
+visible = false
+position = Vector2(240, -20)
+shape = SubResource("SegmentShape2D_7nct3")
+
+[node name="Left" type="CollisionShape2D" parent="Bkg/Border"]
+visible = false
+position = Vector2(240, -20)
+shape = SubResource("SegmentShape2D_3cgmj")
+
+[node name="Right" type="CollisionShape2D" parent="Bkg/Border"]
+visible = false
+position = Vector2(240, -20)
+shape = SubResource("SegmentShape2D_w1osg")
+
+[node name="Bottom" type="CollisionShape2D" parent="Bkg/Border"]
+visible = false
+position = Vector2(240, -20)
+shape = SubResource("SegmentShape2D_yjv41")
+
+[node name="Ball" parent="." instance=ExtResource("2_hducy")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Pins" type="Node" parent="."]
+
+[node name="Pin_1" parent="Pins" instance=ExtResource("3_kewaa")]
+position = Vector2(24, -245)
+
+[node name="Pin_2" parent="Pins" instance=ExtResource("3_kewaa")]
+position = Vector2(-70, -334)
+
+[node name="Pin_3" parent="Pins" instance=ExtResource("3_kewaa")]
+position = Vector2(47, -289)
+
+[node name="Pin_4" parent="Pins" instance=ExtResource("3_kewaa")]
+position = Vector2(0, -288)
+
+[node name="Pin_5" parent="Pins" instance=ExtResource("3_kewaa")]
+position = Vector2(-25, -245)
+
+[node name="Pin_6" parent="Pins" instance=ExtResource("3_kewaa")]
+position = Vector2(-49, -289)
+
+[node name="Pin_7" parent="Pins" instance=ExtResource("3_kewaa")]
+position = Vector2(70, -334)
+
+[node name="Pin_8" parent="Pins" instance=ExtResource("3_kewaa")]
+position = Vector2(23, -334)
+
+[node name="Pin_9" parent="Pins" instance=ExtResource("3_kewaa")]
+position = Vector2(-24, -334)
+
+[node name="Pin_10" parent="Pins" instance=ExtResource("3_kewaa")]
+position = Vector2(0, -204)

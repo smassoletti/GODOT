@@ -1,0 +1,95 @@
+[gd_scene load_steps=9 format=3 uid="uid://d4cb7fceodc8v"]
+
+[ext_resource type="Script" path="res://Ball/Ball.gd" id="1_xfru5"]
+[ext_resource type="Script" path="res://Ball/RightBar.gd" id="2_wp5pn"]
+[ext_resource type="Script" path="res://Ball/CrossBars.gd" id="3_hogto"]
+[ext_resource type="Script" path="res://Ball/LeftBar.gd" id="3_vkimx"]
+[ext_resource type="Script" path="res://Ball/TopBar.gd" id="4_l548h"]
+[ext_resource type="Script" path="res://Ball/DownBar.gd" id="5_xpoe0"]
+[ext_resource type="Texture2D" uid="uid://cumgt4i5akohq" path="res://Ball/Ball.png" id="6_j38yc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ok0o6"]
+radius = 26.1725
+
+[node name="Ball" type="Node2D"]
+script = ExtResource("1_xfru5")
+
+[node name="CrossBars" type="Node2D" parent="."]
+script = ExtResource("3_hogto")
+
+[node name="RightBar" type="ProgressBar" parent="CrossBars"]
+offset_left = 19.0
+offset_top = -11.0
+offset_right = 107.0
+offset_bottom = 13.0
+min_value = 1.0
+max_value = 400.0
+step = 0.1
+value = 1.0
+allow_greater = true
+show_percentage = false
+script = ExtResource("2_wp5pn")
+
+[node name="LeftBar" type="ProgressBar" parent="CrossBars"]
+offset_left = -104.0
+offset_top = -11.0
+offset_right = -16.0
+offset_bottom = 13.0
+min_value = 1.0
+max_value = 400.0
+step = 0.1
+value = 1.0
+allow_greater = true
+fill_mode = 1
+show_percentage = false
+script = ExtResource("3_vkimx")
+
+[node name="TopBar" type="ProgressBar" parent="CrossBars"]
+offset_left = -12.0
+offset_top = -99.0
+offset_right = 12.0
+offset_bottom = -8.0
+min_value = 1.0
+max_value = 400.0
+step = 0.1
+value = 1.0
+allow_greater = true
+fill_mode = 3
+show_percentage = false
+script = ExtResource("4_l548h")
+
+[node name="DownBar" type="ProgressBar" parent="CrossBars"]
+offset_left = -12.0
+offset_top = 5.0
+offset_right = 12.0
+offset_bottom = 96.0
+min_value = 1.0
+max_value = 400.0
+step = 0.1
+value = 1.0
+allow_greater = true
+fill_mode = 2
+show_percentage = false
+script = ExtResource("5_xpoe0")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="BallSprite" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("6_j38yc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_ok0o6")
+
+[node name="Boing1" type="AudioStreamPlayer" parent="CharacterBody2D/CollisionShape2D"]
+
+[node name="Boing2" type="AudioStreamPlayer" parent="CharacterBody2D/CollisionShape2D"]
+
+[node name="Boing3" type="AudioStreamPlayer" parent="CharacterBody2D/CollisionShape2D"]
+
+[node name="Boing4" type="AudioStreamPlayer" parent="CharacterBody2D/CollisionShape2D"]
+
+[node name="Boing5" type="AudioStreamPlayer" parent="CharacterBody2D/CollisionShape2D"]
+
+[node name="Boing6" type="AudioStreamPlayer" parent="CharacterBody2D/CollisionShape2D"]
+
+[node name="Boing7" type="AudioStreamPlayer" parent="CharacterBody2D/CollisionShape2D"]

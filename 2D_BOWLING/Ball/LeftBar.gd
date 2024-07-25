@@ -1,4 +1,4 @@
-extends TextureProgressBar
+extends ProgressBar
 
 
 # Called when the node enters the scene tree for the first time.
@@ -8,5 +8,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	accumulator_x 0
+	value = -$"../..".accumulate_x
+	visible = value >= 10
 	pass

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bqsn2imgxrhgj"
+path="res://.godot/imported/boingg 4.mp3-80fbc949ff72603ef1ce57e4a4827633.mp3str"
+
+[deps]
+
+source_file="res://boingg 4.mp3"
+dest_files=["res://.godot/imported/boingg 4.mp3-80fbc949ff72603ef1ce57e4a4827633.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

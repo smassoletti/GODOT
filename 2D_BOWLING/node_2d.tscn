@@ -54,4 +54,4 @@ position = Vector2(240, -20)
 shape = SubResource("SegmentShape2D_yjv41")
 
 [node name="Ball" parent="." instance=ExtResource("3_cycsp")]
-position = Vector2(0, 24)
+position = Vector2(232, 472)

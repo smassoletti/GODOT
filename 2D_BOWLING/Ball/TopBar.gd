@@ -8,6 +8,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	value = -$"../..".accumulate_y
+	value = -$"../../CharacterBody2D".accumulate_y
 	visible = value >= 10	
 	pass

@@ -52,8 +52,6 @@ visible = false
 position = Vector2(240, -20)
 shape = SubResource("SegmentShape2D_yjv41")
 
-[node name="Ball" parent="." instance=ExtResource("2_hducy")]
-
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Pins" type="Node" parent="."]
@@ -61,29 +59,4 @@ shape = SubResource("SegmentShape2D_yjv41")
 [node name="Pin_1" parent="Pins" instance=ExtResource("3_kewaa")]
 position = Vector2(24, -245)
 
-[node name="Pin_2" parent="Pins" instance=ExtResource("3_kewaa")]
-position = Vector2(-70, -334)
-
-[node name="Pin_3" parent="Pins" instance=ExtResource("3_kewaa")]
-position = Vector2(47, -289)
-
-[node name="Pin_4" parent="Pins" instance=ExtResource("3_kewaa")]
-position = Vector2(0, -288)
-
-[node name="Pin_5" parent="Pins" instance=ExtResource("3_kewaa")]
-position = Vector2(-25, -245)
-
-[node name="Pin_6" parent="Pins" instance=ExtResource("3_kewaa")]
-position = Vector2(-49, -289)
-
-[node name="Pin_7" parent="Pins" instance=ExtResource("3_kewaa")]
-position = Vector2(70, -334)
-
-[node name="Pin_8" parent="Pins" instance=ExtResource("3_kewaa")]
-position = Vector2(23, -334)
-
-[node name="Pin_9" parent="Pins" instance=ExtResource("3_kewaa")]
-position = Vector2(-24, -334)
-
-[node name="Pin_10" parent="Pins" instance=ExtResource("3_kewaa")]
-position = Vector2(0, -204)
+[node name="Ball" parent="." instance=ExtResource("2_hducy")]

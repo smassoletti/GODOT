@@ -1,18 +1,17 @@
 [gd_scene load_steps=9 format=3 uid="uid://d4cb7fceodc8v"]
 
-[ext_resource type="Script" path="res://Ball/Ball.gd" id="1_xfru5"]
 [ext_resource type="Script" path="res://Ball/RightBar.gd" id="2_wp5pn"]
 [ext_resource type="Script" path="res://Ball/CrossBars.gd" id="3_hogto"]
 [ext_resource type="Script" path="res://Ball/LeftBar.gd" id="3_vkimx"]
 [ext_resource type="Script" path="res://Ball/TopBar.gd" id="4_l548h"]
 [ext_resource type="Script" path="res://Ball/DownBar.gd" id="5_xpoe0"]
 [ext_resource type="Texture2D" uid="uid://cumgt4i5akohq" path="res://Ball/Ball.png" id="6_j38yc"]
+[ext_resource type="Script" path="res://Ball/CharacterBody2D.gd" id="7_45fud"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ok0o6"]
 radius = 26.1725
 
 [node name="Ball" type="Node2D"]
-script = ExtResource("1_xfru5")
 
 [node name="CrossBars" type="Node2D" parent="."]
 script = ExtResource("3_hogto")
@@ -73,8 +72,10 @@ show_percentage = false
 script = ExtResource("5_xpoe0")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("7_45fud")
 
 [node name="BallSprite" type="Sprite2D" parent="CharacterBody2D"]
+rotation = -0.863938
 texture = ExtResource("6_j38yc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]

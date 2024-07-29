@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bekau76yau4pw"]
+
+[ext_resource type="PackedScene" uid="uid://bwjyjfxx430xm" path="res://Pin.tscn" id="1_4r40h"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Pin1" parent="." instance=ExtResource("1_4r40h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.619358, 1.67232, -0.530889)

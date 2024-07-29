@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwjyjfxx430xm"]
+
+[ext_resource type="PackedScene" uid="uid://cwwteto6emj3b" path="res://bowling_pin.glb" id="1_it13n"]
+
+[node name="Pin" type="Node3D"]
+
+[node name="Pin" parent="." instance=ExtResource("1_it13n")]

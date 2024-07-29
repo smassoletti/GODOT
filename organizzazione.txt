@@ -1,0 +1,14 @@
+GAMEDEV:
+
+OBIETTIVO FINALE:
+- 2D
+- Estetica flat
+- Physics based
+
+STEP1:
+
+
+STEP2:
+
+
+STEP3:

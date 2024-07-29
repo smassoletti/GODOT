@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwjyjfxx430xm"]
+
+[ext_resource type="ArrayMesh" uid="uid://txqep2sacjll" path="res://pin.obj" id="1_ofrx2"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4wckn"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_p57t1"]
+points = PackedVector3Array(0.636178, -0.466509, -0.232054, -0.652503, -0.780741, -0.0597872, -0.591785, -1.07388, -0.118734, 0.175269, -0.71027, 0.644206, -0.184129, 2.24373, -0.122854, 0.128938, 2.03493, 0.452979, -0.232273, -0.409145, -0.637915, 0.258583, 2.09989, -0.38936, 0.363779, -1.65771, -0.24342, -0.405558, -0.755527, 0.52019, -0.454113, 2.03493, 0.128938, 0.636551, -0.466949, 0.231056, 0.120448, -1.65215, 0.423245, 0.452979, 2.03493, 0.128938, -0.38936, 2.03493, -0.259716, 0.231276, -0.409552, -0.638289, -0.243242, -1.65628, -0.364645, -0.364816, -1.65719, 0.242223, -0.130072, 2.03493, 0.452979, -0.130072, 2.03493, -0.454113, -0.576338, -0.635399, -0.346054, -0.638289, -0.409553, 0.231276, 0.530569, -1.18927, 0.235451, 0.345694, -0.637461, 0.576494, -0.176339, -0.709911, 0.643974, 0.0591603, -1.32796, -0.538496, 0.388227, 2.09989, 0.258583, -0.259716, 2.09989, 0.388227, 0.388227, 2.09989, -0.259716, 0.40433, -0.755284, -0.521201, -0.637915, -0.409145, -0.232273, 0.591427, -1.07566, -0.118889)
+
+[node name="Pin" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.61492, 0)
+mass = 1.64
+physics_material_override = SubResource("PhysicsMaterial_4wckn")
+can_sleep = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("ConvexPolygonShape3D_p57t1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = ExtResource("1_ofrx2")
+skeleton = NodePath("")

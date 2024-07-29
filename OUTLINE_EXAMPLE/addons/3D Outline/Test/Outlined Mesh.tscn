@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://br32sxl7l1sjj"]
+
+[ext_resource type="Material" uid="uid://4x1xjbh187bt" path="res://addons/3D Outline/Outline.material" id="1"]
+
+[sub_resource type="SphereMesh" id="1"]
+material = ExtResource("1")
+
+[node name="MeshInstance" type="MeshInstance3D"]
+mesh = SubResource("1")

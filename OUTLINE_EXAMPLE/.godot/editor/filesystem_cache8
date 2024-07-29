@@ -1,0 +1,12 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1722267788
+default_env.tres::Environment::-1::1583185566::0::1::::<><>::
+icon.png::CompressedTexture2D::4912226464742040874::1583185566::1722267763::1::::<><>::
+README.md::TextFile::-1::1583185566::0::1::::<><>::
+::res://addons/::1583185566
+::res://addons/3D Outline/::1583185566
+Outline.material::ShaderMaterial::-1::1583185566::0::1::::<><>::res://addons/3D Outline/Outline.shader
+Toggle Outline.gd::GDScript::-1::1583185566::0::1::::<>Spatial<>::
+::res://addons/3D Outline/Test/::1583185566
+Outlined Mesh.tscn::PackedScene::-1::1583185566::0::1::::<><>::res://addons/3D Outline/Outline.material
+Test View.tscn::PackedScene::-1::1583185566::0::1::::<><>::res://addons/3D Outline/Toggle Outline.gd<>res://addons/3D Outline/Test/Outlined Mesh.tscn

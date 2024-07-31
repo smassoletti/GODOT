@@ -62,11 +62,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.619358, -13.5402, -0.53088
 physics_material_override = SubResource("PhysicsMaterial_tq1im")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="WorldEnvironment/Plane/StaticBody3D"]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 12.6182, 0)
+transform = Transform3D(8.2, 0, 0, 0, 2, 0, 0, 0, 21.6, 0.6, 12.6182, 0)
 mesh = ExtResource("1_k5bjf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/Plane/StaticBody3D"]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 12.6182, 0)
+transform = Transform3D(21.84, 0, 0, 0, 21.84, 0, 0, 0, 21.84, 0, 12.6182, 0)
 shape = SubResource("ConvexPolygonShape3D_obx3y")
 
 [node name="Ball" parent="WorldEnvironment" instance=ExtResource("3_vhgfl")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bekau76yau4pw"]
+[gd_scene load_steps=10 format=3 uid="uid://bekau76yau4pw"]
 
 [ext_resource type="PackedScene" uid="uid://bwjyjfxx430xm" path="res://Pin/Pin.tscn" id="1_4r40h"]
 [ext_resource type="ArrayMesh" uid="uid://7jrbsxg7fd30" path="res://Plane/wood_floor_worn_4k.obj" id="1_k5bjf"]
@@ -8,10 +8,20 @@
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_70cqg"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tq1im"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_weout"]
+diffuse_mode = 3
+specular_mode = 1
+disable_ambient_light = true
+vertex_color_use_as_albedo = true
+normal_enabled = true
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_obx3y"]
-points = PackedVector3Array(-1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0, 1)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6uqp5"]
+points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
+
+[sub_resource type="QuadMesh" id="QuadMesh_kye7m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ut7r3"]
+albedo_color = Color(0, 0, 0, 1)
 
 [node name="Node3D" type="Node3D"]
 
@@ -20,7 +30,8 @@ environment = SubResource("Environment_rwwn0")
 camera_attributes = SubResource("CameraAttributesPractical_70cqg")
 
 [node name="Camera3D" type="Camera3D" parent="WorldEnvironment"]
-transform = Transform3D(-1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, 0, 33.3626, 0)
+transform = Transform3D(-1, 2.99003e-08, -8.21505e-08, 0, 0.939693, 0.34202, 8.74228e-08, 0.34202, -0.939693, -0.29, 8.583, -30.555)
+fov = 48.2
 
 [node name="Pins" type="Node3D" parent="WorldEnvironment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.91764, 0, 15.7203)
@@ -58,19 +69,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0581, 0, 0)
 [node name="Plane" type="Node3D" parent="WorldEnvironment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.619358, -13.5402, -0.530889)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/Plane"]
-physics_material_override = SubResource("PhysicsMaterial_tq1im")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="WorldEnvironment/Plane/StaticBody3D"]
-transform = Transform3D(8.2, 0, 0, 0, 2, 0, 0, 0, 21.6, 0.6, 12.6182, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WorldEnvironment/Plane"]
+transform = Transform3D(9.02, 0, 0, 0, 2, 0, 0, 0, 21.6, 0.6, 13, 0)
 mesh = ExtResource("1_k5bjf")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_weout")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/Plane/StaticBody3D"]
-transform = Transform3D(21.84, 0, 0, 0, 21.84, 0, 0, 0, 21.84, 0, 12.6182, 0)
-shape = SubResource("ConvexPolygonShape3D_obx3y")
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/Plane/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/Plane/MeshInstance3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.915, 0, 0.2, 0)
+shape = SubResource("ConvexPolygonShape3D_6uqp5")
 
 [node name="Ball" parent="WorldEnvironment" instance=ExtResource("3_vhgfl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0855961, -2.01257, -10.4512)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.019, -0.923, -18.971)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
-transform = Transform3D(1, 0, 0, 0, -0.450098, 0.892979, 0, -0.892979, -0.450098, 0, 7.14515, 0)
+transform = Transform3D(1, 0, 0, 0, -0.450098, 0.892979, 0, -0.892979, -0.450098, -113.51, 9.15314, -25.209)
+light_energy = 1.333
+light_indirect_energy = 11.341
+light_volumetric_fog_energy = 6.769
+light_angular_distance = 8.55
+sky_mode = 1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-191422, 0, 2.74109e-05, 0, 125006, 0, -0.0289039, 0, -181.535, 0, 6, 387)
+mesh = SubResource("QuadMesh_kye7m")
+surface_material_override/0 = SubResource("StandardMaterial3D_ut7r3")

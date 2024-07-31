@@ -14,3 +14,14 @@ config/name="3D_BOWLING"
 run/main_scene="res://node_3d.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=540
+window/size/viewport_height=800
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=3
+anti_aliasing/quality/msaa_3d=3
+anti_aliasing/quality/use_taa=true
